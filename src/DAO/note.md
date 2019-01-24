@@ -29,3 +29,12 @@
 ### DAO文件夹下建立test文件夹
 * **/src/DAO/test**
 * 该文件夹做测试
+
+## 数据库连接
+
+### IDEA连接数据库
+
+### 下载jar包
+* mysql-connector-java-8.0.13
+
+
