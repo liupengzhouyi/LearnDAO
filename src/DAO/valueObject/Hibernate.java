@@ -1,6 +1,6 @@
 package DAO.valueObject;
 
-public class hibernate {
+public class Hibernate {
 
     private int user_id ;
 
