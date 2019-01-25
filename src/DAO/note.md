@@ -37,4 +37,14 @@
 ### 下载jar包
 * mysql-connector-java-8.0.13
 
+## 设计DAO接口
 
+### 在lpInterface文件夹下创建HibernateInterface
+
+* /src/DAO/lpInterface/HibernateInterface
+
+## 实现DAO接口
+
+### 在lpImplements文件夹下创建Hibernate文件类
+
+* /src/DAO/lpImplements/Hibernate

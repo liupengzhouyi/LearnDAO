@@ -21,6 +21,7 @@ public interface HibernateInterface {
     //查
     public Hibernate queryById(int userid) throws Exception;
 
+
     //获取所有
     public List queryAll() throws Exception;
 }
