@@ -21,4 +21,18 @@
     > DAO.test.DAOImplements.TestDAOImplements
     
 * 测试成功！
+
+## 测试DAO工厂
+
+* 在test文件夹中新建DAOFactory文件夹
+
+    > 文件夹名：DAOFactory
+    
+    > 文件路径：/src/DAO/test/DAOFactory
+
+* 新建测试类TestDAOFactory
+
+    > 文件名：DTestDAOFactory
+
+    > 文件目录：/src/DAO/test/DAOFactory/TestDAOFactory
     
