@@ -36,3 +36,4 @@
 
     > 文件目录：/src/DAO/test/DAOFactory/TestDAOFactory
     
+* 测试成功！
