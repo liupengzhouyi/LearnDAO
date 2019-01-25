@@ -48,3 +48,8 @@
 ### 在lpImplements文件夹下创建Hibernate文件类
 
 * /src/DAO/lpImplements/Hibernate
+
+
+## 设置DAO工厂
+
+* **记录目录** ： /src/DAO/factory/note.md
