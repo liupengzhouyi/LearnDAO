@@ -1,39 +1,78 @@
 # LearnDAO
 
 #### 介绍
-{**以下是码云平台说明，您可以替换此简介**
-码云是开源中国推出的基于 Git 的代码托管平台（同时支持 SVN）。专为开发者提供稳定、高效、安全的云端软件开发协作平台
-无论是个人、团队、或是企业，都能够用码云实现代码托管、项目管理、协作开发。企业项目请看 [https://gitee.com/enterprises](https://gitee.com/enterprises)}
+#
+DAO 是什么？
+**今日得宝图一张，了解DAO在项目中的作用**
 
-#### 软件架构
-软件架构说明
+## DAO层大抵是一种持久层
+
+### 承上启下
+
+**对下**
+
+* 对下可以连接数据库
+* 获取对数据库的操作
+* 获取数据库中的数据
+* 对数据库中的数据增删改查
+
+**对上**
+
+* 提供封装好的数据
+* 提供对数据操作的接口
+
+### 这就是DAO层！
+
+## DAO 层包含什么？
+
+* DatabaseConnection
+
+> 负责数据库的打开
+> 负责数据库的关闭
+
+* ValueObject
+
+> JavaBean 对数据库的对象进行封装
+
+* DAO interface
+
+> 定义数据库操作的接口
+
+* Implement DAO
+
+> 实现对数据库操作的接口类
+
+* Proxy
+
+> 代理实现类，主要完成对数据库的打开与关闭。
+> 调用真实实现类对线的操作
+
+* Factory
+
+> 工厂类，通过工厂类获取一个DAO的实例化对象
+
+## 命名规则
 
 
-#### 安装教程
+**数据库连接**：xxx.dbc.DatabaseConnection
+**DAO接口**： xxx.dao.XxxDAOInterface
+**DAO接口真实实现类**：xxx.dao.implement.XxxDAOImplement
+**DAO接口代理实现类**：xxx.dao.proxy.XxxDAOProxy
+**ValueObject类**： xxx.valueObject.Xxx, ValueObject命名要与表的命名一致
+**工厂类**：xxx.factory.DAOFactory.
 
-1. xxxx
-2. xxxx
-3. xxxx
+## [提交记录](note/note.md)
 
-#### 使用说明
+## [说明](DAO/note.md)
 
-1. xxxx
-2. xxxx
-3. xxxx
+### [工厂说明](DAO/factory/note.md)
 
-#### 参与贡献
+### [数据库连接说明](DAO/link/node.md)
 
-1. Fork 本仓库
-2. 新建 Feat_xxx 分支
-3. 提交代码
-4. 新建 Pull Request
+### [DAO实现说明](DAO/lpImplements/note.md)
 
+### [DAO接口说明](DAO/lpInterface/note.md)
 
-#### 码云特技
+### [测试说明](DAO/test/note.md)
 
-1. 使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2. 码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3. 你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4. [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5. 码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6. 码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+### [ValueObject说明](DAO/valueObject/note.md)
