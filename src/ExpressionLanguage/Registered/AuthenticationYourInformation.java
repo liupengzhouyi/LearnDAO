@@ -41,10 +41,26 @@ public class AuthenticationYourInformation {
      * 验证密码长度小于10
      * @return
      */
-    public boolean judegPasswordLongth() {
+    public boolean judegPasswordLongth01() {
         boolean key = false;
 
         if (this.getPassword01().length() >= 10) {
+            key = false;
+        } else {
+            key = true;
+        }
+
+        return key;
+    }
+
+    /**
+     * 验证密码长度大于6
+     * @return
+     */
+    public boolean judegPasswordLongth02() {
+        boolean key = false;
+
+        if (this.getPassword01().length() < 6) {
             key = false;
         } else {
             key = true;
@@ -101,7 +117,7 @@ public class AuthenticationYourInformation {
      * 1：用户名太长
      * 2：用户密码太长
      * 3：用户密码不一致
-     *
+     * 4：用户密码太短
      * @return
      */
     public int canUsed() {
@@ -109,14 +125,21 @@ public class AuthenticationYourInformation {
         // 用户名长度
         boolean key01 = this.judegNameLongth();
         // 用户密码长度
-        boolean key02 = this.judegPasswordLongth();
+        boolean key02 = this.judegPasswordLongth01();
         // 用户密码一致性
         boolean key03 = this.judegPasswordSame();
+        // 用户密码长度
+        boolean key04 = this.judegPasswordLongth02();
 
         if (key01 == true) {
             if (key02 == true) {
                 if (key03 == true) {
-                    key = 0;
+                    if (key04 == true) {
+                        key = 0;
+                    } else {
+                        key = 4;
+                        // 用户密码太短
+                    }
                 } else {
                     key = 3;
                     // 用户密码不一致
