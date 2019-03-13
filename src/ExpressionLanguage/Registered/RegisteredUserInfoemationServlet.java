@@ -17,10 +17,22 @@ public class RegisteredUserInfoemationServlet extends HttpServlet {
         String lp_password01 = request.getParameter("lp_password01");
         String lp_password02 = request.getParameter("lp_password02");
 
+        int key = 0;
 
+        AuthenticationYourInformation authenticationYourInformation = new AuthenticationYourInformation(lp_name, lp_password01, lp_password02);
 
+        key = authenticationYourInformation.canUsed();
 
-        System.out.println(lp_name);
+        /*      * 0：合法
+                * 1：用户名太长
+                * 2：用户密码太长
+                * 3：用户密码不一致
+                * 4：用户密码太短*/
+        if (key == 0) {
+
+        } else {
+            // 跳转错误页面
+        }
 
     }
 
