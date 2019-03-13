@@ -22,7 +22,7 @@ public class AuthenticationYourInformation {
     }
 
     /**
-     * 验证密码长度小于20
+     * 验证用户名长度小于20
      * @return
      */
     public boolean judegNameLongth() {
@@ -38,7 +38,7 @@ public class AuthenticationYourInformation {
     }
 
     /**
-     * 延安密码长度小于10
+     * 验证密码长度小于10
      * @return
      */
     public boolean judegPasswordLongth() {
@@ -94,6 +94,43 @@ public class AuthenticationYourInformation {
     }
 
 
+    /**
+     * 判断用户注册信息的合法性
+     *
+     * 0：合法
+     * 1：用户名太长
+     * 2：用户密码太长
+     * 3：用户密码不一致
+     *
+     * @return
+     */
+    public int canUsed() {
+        int key = 0;
+        // 用户名长度
+        boolean key01 = this.judegNameLongth();
+        // 用户密码长度
+        boolean key02 = this.judegPasswordLongth();
+        // 用户密码一致性
+        boolean key03 = this.judegPasswordSame();
+
+        if (key01 == true) {
+            if (key02 == true) {
+                if (key03 == true) {
+                    key = 0;
+                } else {
+                    key = 3;
+                    // 用户密码不一致
+                }
+            } else {
+                key = 2;
+                // 用户密码太长
+            }
+        } else {
+            key = 1;
+            // 用户名太长
+        }
+        return key;
+    }
 
 
 }
