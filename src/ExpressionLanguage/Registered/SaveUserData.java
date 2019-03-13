@@ -43,7 +43,7 @@ public class SaveUserData {
         this.sql = "insert into el_user_table(user_name, user_password) value (\'" + user.getUser_name() + "\', \'" + user.getUser_password() + "\');";
     }
 
-    public void save() throws ClassNotFoundException, SQLException {
+    public boolean save() throws ClassNotFoundException, SQLException {
         Linkdatabase linkdatabase = new Linkdatabase();
 
         boolean key = linkdatabase.saveData(this.getSql());
@@ -53,6 +53,8 @@ public class SaveUserData {
         } else {
             System.out.println("注册用户数据没有保存成功！");
         }
+
+        return key;
     }
 
 }
