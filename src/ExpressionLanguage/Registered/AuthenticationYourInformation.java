@@ -21,6 +21,54 @@ public class AuthenticationYourInformation {
         this.setPassword02(password02);
     }
 
+    /**
+     * 验证密码长度小于20
+     * @return
+     */
+    public boolean judegNameLongth() {
+        boolean key = false;
+
+        if (this.getName().length() >= 20) {
+            key = false;
+        } else {
+            key = true;
+        }
+
+        return key;
+    }
+
+    /**
+     * 延安密码长度小于10
+     * @return
+     */
+    public boolean judegPasswordLongth() {
+        boolean key = false;
+
+        if (this.getPassword01().length() >= 10) {
+            key = false;
+        } else {
+            key = true;
+        }
+
+        return key;
+    }
+
+    /**
+     * 验证密码是否一一致
+     * @return
+     */
+    public boolean judegPasswordSame() {
+        boolean key = false;
+
+        if(this.getPassword01().equals(this.getPassword02())) {
+            key = true;
+        } else {
+            key = false;
+        }
+
+        return key;
+    }
+
     public String getName() {
         return name;
     }
