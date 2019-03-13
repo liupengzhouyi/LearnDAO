@@ -13,12 +13,12 @@ public class GetUserID {
 
     private Linkdatabase linkdatabase = null;
 
-
+    private int user_id = 0;
 
     public GetUserID() throws ClassNotFoundException, SQLException {
         this.init();
         this.setSql();
-        //this.getID();
+        this.getID();
     }
 
     public void init() {
@@ -42,6 +42,14 @@ public class GetUserID {
         this.sql = "select user_id from el_user_table;";
     }
 
+    public int getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
+    }
+
     public void getID() throws ClassNotFoundException, SQLException {
         linkdatabase = new Linkdatabase();
 
@@ -53,8 +61,11 @@ public class GetUserID {
             number = resultSet.getInt("user_id");
         }
 
-        System.out.println(number);
+        this.setUser_id(number);
 
+        System.out.println(number);
     }
+
+
 }
 

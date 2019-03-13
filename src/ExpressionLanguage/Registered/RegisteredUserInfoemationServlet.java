@@ -51,7 +51,18 @@ public class RegisteredUserInfoemationServlet extends HttpServlet {
                 temp = saveUserData.save();
                 if (temp == true) {
                     System.out.println("注册用户数据保存到数据库");
+                    //获取用户注册的ID
+                    GetUserID getUserID = new GetUserID();
+                    int user_id = getUserID.getUser_id();
+                    user.setUser_id(user_id + "");
 
+                    //用户信息保存到Session
+                    HttpSession httpSession = request.getSession();
+                    httpSession.setAttribute("user_id", user_id + "");
+                    httpSession.setAttribute("user_name", lp_name);
+
+                    //页面跳转
+                    response.sendRedirect("/ExpressionLanguage/SuccessPages/RegisteredSuccessPage.jsp");
 
 
                 } else {
