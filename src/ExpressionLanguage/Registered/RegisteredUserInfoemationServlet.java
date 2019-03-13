@@ -32,7 +32,9 @@ public class RegisteredUserInfoemationServlet extends HttpServlet {
                 * 1：用户名太长
                 * 2：用户密码太长
                 * 3：用户密码不一致
-                * 4：用户密码太短*/
+                * 4：用户密码太短
+                * 5：未知原因，用户注册信息没有存储到数据库
+                * */
         if (key == 0) {
             System.out.println("注册用户信息进入数据库8888888");
 
@@ -47,15 +49,17 @@ public class RegisteredUserInfoemationServlet extends HttpServlet {
             SaveUserData saveUserData = new SaveUserData(user);
             try {
                 temp = saveUserData.save();
-
                 if (temp == true) {
-
                     System.out.println("注册用户数据保存到数据库");
 
 
 
                 } else {
                     System.out.println("注册用户的信息没哦呦进入数据库！");
+                    HttpSession httpSession = request.getSession();
+                    httpSession.setAttribute("ErrorNumber", 5+"");
+                    //页面跳转
+                    response.sendRedirect("/ExpressionLanguage/ErrorPages/ErrorNumber.jsp");
                 }
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
@@ -64,18 +68,13 @@ public class RegisteredUserInfoemationServlet extends HttpServlet {
             }
 
         } else {
-
-            System.out.println("跳转错误页面!");
             // 跳转错误页面
-
+            System.out.println("跳转错误页面!");
             //保存Seesion信息
-
             HttpSession httpSession = request.getSession();
             httpSession.setAttribute("ErrorNumber", key+"");
-
-            response.sendRedirect("/ExpressionLanguage/ErrorPages/ErrorNumber.jspp");
-
-
+            //页面跳转
+            response.sendRedirect("/ExpressionLanguage/ErrorPages/ErrorNumber.jsp");
         }
 
     }
