@@ -11,7 +11,7 @@
     <title>登陆</title>
 </head>
 <body>
-    <form action="" method="post">
+    <form action="/ExpressionLanguage/Landing/GetUserLandingInformationServlet" method="post">
         <table>
             <tr>
                 <th>

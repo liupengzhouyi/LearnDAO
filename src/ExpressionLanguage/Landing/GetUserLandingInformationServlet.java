@@ -33,15 +33,20 @@ public class GetUserLandingInformationServlet extends HttpServlet {
 
             if (key == true) {
                 // 用户正确
+                GetUserName getUserName = new GetUserName(user_id);
+                String user_name = getUserName.getUserName();
+                HttpSession httpSession1 = request.getSession();
+                httpSession1.invalidate();
                 HttpSession httpSession = request.getSession();
-                httpSession.invalidate();
                 httpSession.setAttribute("user_id", user_id);
+                httpSession.setAttribute("user_name", user_name);
+                response.sendRedirect("/ExpressionLanguage/SuccessPages/LandingSuccessPage.jsp");
 
             } else {
                 // 用户错误
 
                 // 跳转错误页面
-                response.sendRedirect("");
+                response.sendRedirect("/ExpressionLanguage/ErrorPages/ErrorUserNameOrPassword.jsp");
 
             }
 
