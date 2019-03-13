@@ -12,14 +12,14 @@
 </head>
 <body>
 
-<form >
+<form action="/ExpressionLanguage/Registered/RegisteredUserInfoemationServlet" method="post">
     <table border="1">
         <tr>
             <td>
                 请输入用户名
             </td>
             <td>
-                <input type="text" >
+                <input type="text" name="lp_name">
             </td>
         </tr>
         <tr>
@@ -39,6 +39,11 @@
             </td>
         </tr>
 
+        <tr>
+            <td>
+                <input type="submit" title="提交">
+            </td>
+        </tr>
     </table>
 </form>
 
