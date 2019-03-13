@@ -18,8 +18,11 @@ public class GetUserName {
 
     public GetUserName(String user_id) throws ClassNotFoundException, SQLException {
         this.init();
+        this.setUser_id(user_id);
         this.setSql();
-        this.getID();
+        System.out.println(this.getSql());
+        this.getNameByID();
+
     }
 
     public void init() {
@@ -32,8 +35,8 @@ public class GetUserName {
         this.user_id = user_id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUser_id() {
+        return user_id;
     }
 
     public void setUserName(String userName) {
@@ -45,30 +48,27 @@ public class GetUserName {
     }
 
     public void setSql() {
-        this.sql = "select user_id from el_user_table;";
+        this.sql = "select user_name from el_user_table where user_id = " + this.getUser_id() + ";";
     }
 
-    public int getUser_id() {
-        return user_id;
+    public String getUserName() {
+        return this.userName;
     }
 
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
-    }
 
-    public void getID() throws ClassNotFoundException, SQLException {
+    public void getNameByID() throws ClassNotFoundException, SQLException {
         linkdatabase = new Linkdatabase();
 
         ResultSet resultSet = linkdatabase.getInformation(this.getSql());
 
-        int number= -1;
+        String name = "";
 
         while(resultSet.next()) {
-            number = resultSet.getInt("user_id");
+            name = resultSet.getString("user_name");
         }
 
-        this.setUser_id(number);
+        this.setUserName(name);
 
-        System.out.println(number);
+        System.out.println(name);
     }
 }
