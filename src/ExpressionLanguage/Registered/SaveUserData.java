@@ -1,5 +1,9 @@
 package ExpressionLanguage.Registered;
 
+import ExpressionLanguage.LinkDatabase.Linkdatabase;
+
+import java.sql.SQLException;
+
 public class SaveUserData {
 
     private User user = null;
@@ -37,6 +41,18 @@ public class SaveUserData {
     public void setSql() {
         User user = this.getUser();
         this.sql = "insert into el_user_table(user_name, user_password) value (\'" + user.getUser_name() + "\', \'" + user.getUser_password() + "\');";
+    }
+
+    public void save() throws ClassNotFoundException, SQLException {
+        Linkdatabase linkdatabase = new Linkdatabase();
+
+        boolean key = linkdatabase.saveData(this.getSql());
+
+        if (key == true) {
+            System.out.println("注册用户数据保存成功！");
+        } else {
+            System.out.println("注册用户数据没有保存成功！");
+        }
     }
 
 }

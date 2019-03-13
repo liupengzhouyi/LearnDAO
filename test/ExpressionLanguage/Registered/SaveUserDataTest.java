@@ -4,6 +4,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.sql.SQLException;
+
 import static org.junit.Assert.*;
 
 public class SaveUserDataTest {
@@ -25,6 +27,11 @@ public class SaveUserDataTest {
     @Test
     public void say() {
         System.out.println(saveUserData.getSql());
+    }
+
+    @Test
+    public void save() throws SQLException, ClassNotFoundException {
+        saveUserData.save();
     }
 
     @After
