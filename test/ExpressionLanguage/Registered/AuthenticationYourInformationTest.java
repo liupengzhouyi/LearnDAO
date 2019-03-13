@@ -17,4 +17,14 @@ public class AuthenticationYourInformationTest {
         System.out.println(number);
 
     }
+
+    @Test
+    public void password01() {
+        AuthenticationYourInformation authenticationYourInformation =
+                new AuthenticationYourInformation("liu", "12345", "12345");
+
+        int number = authenticationYourInformation.canUsed();
+
+        System.out.println(number);
+    }
 }
