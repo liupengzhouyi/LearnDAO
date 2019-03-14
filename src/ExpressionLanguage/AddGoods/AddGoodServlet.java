@@ -41,7 +41,7 @@ public class AddGoodServlet extends HttpServlet {
                     HttpSession httpSession = request.getSession();
                     httpSession.setAttribute("newGood", good);
                     //成功页面
-                    response.sendRedirect("");
+                    response.sendRedirect("/ExpressionLanguage/SuccessPages/AddGoodSuccess.jsp");
                 } else {
                     //商品数据保存失败，原因未知
                     //数据保存失败页面

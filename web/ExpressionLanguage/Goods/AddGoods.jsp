@@ -11,7 +11,7 @@
     <title>商品上传</title>
 </head>
 <body>
-    <form action="" method="post">
+    <form action="/ExpressionLanguage/AddGoods/AddGoodServlet" method="post">
         <table border="1">
             <tr>
                 <th>
@@ -35,6 +35,14 @@
                 </th>
                 <td>
                     <input type="number" name="lp_good_number">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="reset" value="重置">
+                </td>
+                <td>
+                    <input type="submit" value="提交">
                 </td>
             </tr>
         </table>
