@@ -62,22 +62,22 @@
             </th>
             <th>
                 <p>
+                    ${sessionScope.goodList[1].getGood_id()}
+                </p>
+            </th>
+            <th>
+                <p>
                     ${sessionScope.goodList[1].getGood_name()}
                 </p>
             </th>
             <th>
                 <p>
-                    商品名称
+                    ${sessionScope.goodList[1].getGood_price()}
                 </p>
             </th>
             <th>
                 <p>
-                    商品价格
-                </p>
-            </th>
-            <th>
-                <p>
-                    商品剩余量
+                    ${sessionScope.goodList[1].getGood_number()}
                 </p>
             </th>
         </tr>
