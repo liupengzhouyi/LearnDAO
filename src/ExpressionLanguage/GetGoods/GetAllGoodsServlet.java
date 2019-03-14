@@ -26,9 +26,10 @@ public class GetAllGoodsServlet extends HttpServlet {
                 // 保存Session
                 HttpSession httpSession = request.getSession();
                 httpSession.setAttribute("goodList", list);
+                httpSession.setAttribute("goodListNumber", list.size());
                 //跳转详情查看页面
                 System.out.println("11111");
-                response.sendRedirect("/ExpressionLanguage/ErrorPages/GetGoodsErrorPage.jsp");
+                response.sendRedirect("/ExpressionLanguage/SuccessPages/ShowAllGoods.jsp");
             }
 
         } catch (ClassNotFoundException e) {
