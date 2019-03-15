@@ -40,9 +40,13 @@ public class SaveOrder {
         return sql;
     }
 
+    /**
+     * 创建SQL语句
+     */
     public void setSql() {
-        this.sql = "insert into el_order(order_user_id, order_goods_id, order_goods_number) VALUE " +
+        this.sql = "insert into el_order(order_user_id, order_goods_id, order_goods_number) value " +
                 "(" + this.getOrder().getUser_id() + ", " + this.getOrder().getGood_id() + ", " + this.getOrder().getGood_number() + ");";
+        System.out.println(this.sql);
     }
 
     public Linkdatabase getLinkdatabase() {
@@ -67,12 +71,15 @@ public class SaveOrder {
         this.key = key;
     }
 
+    /**
+     * 保存数据
+     * @throws SQLException
+     */
     public void saveOrderInformation() throws SQLException {
         boolean key = this.getLinkdatabase().saveData(this.getSql());
         if (key == true) {
             this.setKey(0);
         } else {
-
             this.setKey(1);
         }
 

@@ -20,6 +20,7 @@ public class SaveGoodsTest {
 
     @Test
     public void paly() {
+        System.out.println(saveGoods.getSql());
         System.out.println(saveGoods.isKey());
     }
 }
