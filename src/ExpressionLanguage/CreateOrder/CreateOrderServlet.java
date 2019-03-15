@@ -31,6 +31,9 @@ public class CreateOrderServlet extends HttpServlet {
         order.setUser_id(Integer.valueOf(user_id));
         order.setGood_id(Integer.valueOf(good.getGood_id()));
         order.setGood_number(Integer.valueOf(numbers));
+        //移除旧订单
+        httpSession.removeAttribute("new_order");
+        httpSession.setAttribute("new_order", order);
 
         //校验订单的有效性
         try {
@@ -51,7 +54,7 @@ public class CreateOrderServlet extends HttpServlet {
                 SaveOrder saveOrder = new SaveOrder(order);
                 ReduceInventory reduceInventory = new ReduceInventory(order);
                 System.out.println("测试页面跳转-F");
-
+                response.sendRedirect("/ExpressionLanguage/ShowOrder/ShowMyOrder/HTMLFlie/index.jsp");
             } else {
                 //保存错误信息到Session
                 httpSession.setAttribute("orderErrorTypeNumber", "" + key);
@@ -59,10 +62,6 @@ public class CreateOrderServlet extends HttpServlet {
                 System.out.println("测试页面跳转-E");
                 response.sendRedirect("/ExpressionLanguage/ErrorPages/ErrorByOrder.jsp");
             }
-
-
-
-
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
