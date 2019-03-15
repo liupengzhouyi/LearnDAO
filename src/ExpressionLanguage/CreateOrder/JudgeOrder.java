@@ -22,7 +22,7 @@ public class JudgeOrder {
         this.init();
         this.setOrder(order);
         this.judgeNumber();
-        if (this.getKey() != 0) {
+        if (this.getKey() == 0) {
             this.judgeOrderNumber();
         }
     }
@@ -58,6 +58,7 @@ public class JudgeOrder {
             // 你的需求太大
             this.setKey(1);
         } else if (this.getOrder().getGood_number() < 0) {
+            System.out.println("----------:" + this.getOrder().getGood_number());
             //你需求是不存在的
             this.setKey(2);
         } else {

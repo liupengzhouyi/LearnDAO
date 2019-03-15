@@ -23,7 +23,7 @@
 
     <hr>
 
-    <form action="" method="post">
+    <form action="/ExpressionLanguage/CreateOrder/CreateOrderServlet" method="post">
         <table>
             <tr>
                 <th>
