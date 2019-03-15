@@ -73,6 +73,19 @@ public class Linkdatabase {
         }
     }
 
+    public boolean updateData(String sql) throws SQLException {
+        this.createConnection();
+        this.createStatement();
+        if (this.statement == null) {
+            return false;
+        } else {
+            String string = sql;
+            //string = "INSERT INTO user (lp_id, lp_name, lp_password) VALUES (1809120006,1234,1234);";
+            this.statement.executeUpdate(string);
+            return true;
+        }
+    }
+
     public ResultSet getInformation(String sql) throws SQLException {
         this.createConnection();
         this.createStatement();

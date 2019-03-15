@@ -46,7 +46,7 @@ public class SaveOrder {
     public void setSql() {
         this.sql = "insert into el_order(order_user_id, order_goods_id, order_goods_number) value " +
                 "(" + this.getOrder().getUser_id() + ", " + this.getOrder().getGood_id() + ", " + this.getOrder().getGood_number() + ");";
-        System.out.println(this.sql);
+        //System.out.println(this.sql);
     }
 
     public Linkdatabase getLinkdatabase() {
