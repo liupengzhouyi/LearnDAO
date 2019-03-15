@@ -43,9 +43,31 @@
                 </th>
             </tr>
 
+            <%
+                for (Good good : (List<Good>)httpSession.getAttribute("allGoods")
+                ) {
+                    %>
+            <tr>
+                <th>
+                    <a href="/ExpressionLanguage/ShowGoods/GoodInformationServlet?good_id=<%=good.getGood_id()%>">
+                        <%=good.getGood_name()%>
+                    </a>
+                </th>
+                <th>
+                    <%=good.getGood_price()%>
+                </th>
+                <th>
+                    <%=good.getGood_number()%>
+                </th>
+            </tr>
+            <%
+                }
+            %>
+
             <c:forEach items="${sessionScope.allGoods}" var="item" begin="1" end="${sessionScope.goodsNumber}" step="1" varStatus="user">
                 <h3>${user.getGood_name()}</h3>
             </c:forEach>
+
         </table>
     </form>
 
