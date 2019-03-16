@@ -28,5 +28,22 @@
 <h2>
     我们刚刚收到您的注册信息，现在，您已经加入我们了，您的编号是：<%=user_id%>.
 </h2>
+
+    <h2>
+        <a href="/index.jsp">
+            <p>
+                返回主页
+            </p>
+        </a>
+    </h2>
+
+
+<h2>
+    <a href="/ExpressionLanguage/Landing/HTMLFlies/index.jsp">
+        <p>
+            登陆
+        </p>
+    </a>
+</h2>
 </body>
 </html>

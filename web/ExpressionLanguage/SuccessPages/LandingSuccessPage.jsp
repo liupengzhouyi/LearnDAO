@@ -23,5 +23,13 @@
         尊敬的<%=user_name%>,您已经登陆成功！
     </h1>
 
+
+    <h2>
+        <a href="/index.jsp">
+            <p>
+                返回主页
+            </p>
+        </a>
+    </h2>
 </body>
 </html>

@@ -19,6 +19,14 @@
 
     <hr>
 
+    <h2>
+        <a href="/index.jsp">
+            <p>
+                返回主页
+            </p>
+        </a>
+    </h2>
+
     <table border="1">
         <tr>
             <th>
