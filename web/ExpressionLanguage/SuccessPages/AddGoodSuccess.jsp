@@ -54,5 +54,12 @@
             </td>
         </tr>
     </table>
+
+    <h3>
+        <a href="/index.jsp">
+            返回主页
+        </a>
+    </h3>
+
 </body>
 </html>

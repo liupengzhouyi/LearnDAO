@@ -42,5 +42,10 @@
       </a>
     </h2>
 
+    <h2>
+      <a href="/ExpressionLanguage/Goods/AddGoods.jsp">
+        添加货物
+      </a>
+    </h2>
   </body>
 </html>
