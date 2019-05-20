@@ -55,10 +55,15 @@ DAO 是什么？
 
 
 **数据库连接**：xxx.dbc.DatabaseConnection
+
 **DAO接口**： xxx.dao.XxxDAOInterface
+
 **DAO接口真实实现类**：xxx.dao.implement.XxxDAOImplement
+
 **DAO接口代理实现类**：xxx.dao.proxy.XxxDAOProxy
+
 **ValueObject类**： xxx.valueObject.Xxx, ValueObject命名要与表的命名一致
+
 **工厂类**：xxx.factory.DAOFactory.
 
 ## [提交记录](note/note.md)
