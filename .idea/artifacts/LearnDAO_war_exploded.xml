@@ -11,6 +11,7 @@
           <element id="library" level="project" name="mysql:mysql-connector-java:8.0.13" />
           <element id="library" level="project" name="junit:junit:4.12" />
           <element id="library" level="project" name="org.hamcrest:hamcrest-core:2.1" />
+          <element id="library" level="project" name="jstl:jstl:1.2" />
         </element>
       </element>
     </root>
